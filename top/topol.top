@@ -1,0 +1,30 @@
+#include "./charmm36-jul2017.ff/forcefield.itp"
+
+; additional params for the molecule
+#include "ja2.prm"
+
+#include "awc.itp"
+
+; Strong position restraints for InflateGRO
+#ifdef STRONG_POSRES
+#include "strong_posre.itp"
+#endif
+
+#include "POPC.itp"
+
+#include "./charmm36-jul2017.ff/tip3p.itp"
+
+; Include topology for ions
+#include "./charmm36-jul2017.ff/ions.itp"
+
+[ system ]
+; Name
+mol in water
+
+[ molecules ]
+; Compound		  #mols
+awc			1
+POPC                   106
+SOL         3999
+K                25
+CL               35
